@@ -1,4 +1,3 @@
-# Use uma versão atualizada do Go que seja compatível
 FROM golang:1.23.1 AS builder
 
 # Defina a versão do console (pode ser "latest" ou específica)
