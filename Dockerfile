@@ -1,12 +1,13 @@
+# Use uma versão atualizada do Go
 FROM golang:1.23.1 AS builder
 
-# Defina a versão do console (pode ser "latest" ou específica)
+# Defina a versão do Console (pode ser "latest" ou uma versão específica)
 ARG CONSOLE_VERSION="latest"
 
-# Baixe e instale o Console
+# Instale o Console
 RUN go install github.com/minio/console/cmd/console@${CONSOLE_VERSION}
 
-# Use uma imagem mais leve para o runtime
+# Use uma imagem leve para execução
 FROM debian:bullseye-slim
 
 # Copie o binário gerado do builder
